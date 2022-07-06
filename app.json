@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "minha-media",
+    "slug": "minha-media",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
