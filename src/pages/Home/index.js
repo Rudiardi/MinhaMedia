@@ -7,6 +7,8 @@ import {
 import Header from '../../components/Header';
 import Contents from "../../components/Contents";
 import Graphs from '../../components/Graphs';
+import Bar from '../../components/Bar';
+
 
 export default function App (){
     return (
@@ -14,6 +16,7 @@ export default function App (){
             <Header title="Minha Média" name="Rudiardi" model="Tornado 250cc"/>
             <Graphs/>
             <Contents />
+            <Bar/>
         </View>
     );
 }
