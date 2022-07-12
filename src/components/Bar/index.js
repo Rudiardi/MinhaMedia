@@ -10,6 +10,7 @@ export default function Bar(){
     return(
         <View style={style.container}>
             <Text>Barra de menus</Text>
+            <Text>Item 2</Text>
         </View>
     )
 }
@@ -18,6 +19,7 @@ const style=StyleSheet.create({
     container:{
         backgroundColor:"#35b",
         height:65,
-        justifyContent:"center"
+        justifyContent:"center",
+        flexDirection:"row"
     }
 })
