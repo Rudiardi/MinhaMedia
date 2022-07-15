@@ -10,7 +10,7 @@ export default function Bar(){
     return(
         <View style={style.container}>
             <Text>Barra de menus</Text>
-            <Text>Item 4</Text>
+            <Text>Item 5</Text>
         </View>
     )
 }
