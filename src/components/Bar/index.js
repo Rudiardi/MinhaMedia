@@ -1,25 +1,60 @@
-import react from "react";
+import React from "react";
 
 import {
     View,
-    Text,
+    TouchableOpacity,
     StyleSheet
 } from "react-native"
+
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faHouse, faUser, faChartColumn } from '@fortawesome/free-solid-svg-icons';
+
+import { NavigationContainer } from "@react-navigation/native";
+
+
 
 export default function Bar(){
     return(
         <View style={style.container}>
-            <Text>Barra de menus</Text>
-            <Text>Item 5</Text>
+            <View style={style.iconBar}>
+                <View>
+                    <TouchableOpacity>
+                        <FontAwesomeIcon icon={ faHouse } style={style.icon} size = {30}/>
+                    </TouchableOpacity>   
+                </View>
+                <View>
+                    <TouchableOpacity>
+                        <FontAwesomeIcon icon={ faChartColumn } style={style.icon} size = {30}/>
+                    </TouchableOpacity>
+                </View>
+                <View>
+                    <TouchableOpacity>
+                        <FontAwesomeIcon icon={ faUser } style={style.icon} size = {30}/>
+                    </TouchableOpacity>
+                </View>
+            </View>  
         </View>
     )
 }
 
 const style=StyleSheet.create({
     container:{
-        backgroundColor:"#35b",
-        height:65,
-        justifyContent:"center",
-        flexDirection:"row"
+        height:50,
+        borderTopLeftRadius:15,
+        borderTopRightRadius:15,
+        backgroundColor:"#2BA84A",
+        justifyContent:"center"
+    },
+    icon:{
+        color:"#FCFFFC",
+    },
+    iconBar:{
+        flexDirection:"row",
+        justifyContent:"space-around",
+        alignItems:"center",
+    },
+    iconButton:{
+
     }
 })
+

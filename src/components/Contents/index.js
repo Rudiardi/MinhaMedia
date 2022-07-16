@@ -77,7 +77,7 @@ export default function Contents(){
 const styles = StyleSheet.create({
     container:{
         backgroundColor:"#2BA84A",
-        height:400
+        borderRadius:15
     },
     text:{
         color:"#FCFFFC",
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     blocTwo:{
         flexDirection:"column",
         justifyContent:"space-around",
-        height:370,
+        height:330,
         alignItems:"center"
     },
     title:{
