@@ -3,17 +3,23 @@ import React from "react";
 import {
     View,
     TouchableOpacity,
-    StyleSheet
+    StyleSheet,
+    Text
 } from "react-native"
+ 
+export default function Bar(){
+    return(
+        <View>
+            <Text>olá</Text>
+        </View>
+    )
+}
 
+/*
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faHouse, faUser, faChartColumn } from '@fortawesome/free-solid-svg-icons';
 
-import { NavigationContainer } from "@react-navigation/native";
-
-
-
-export default function Bar(){
+export default function Bar( ){
     return(
         <View style={style.container}>
             <View style={style.iconBar}>
@@ -57,4 +63,5 @@ const style=StyleSheet.create({
 
     }
 })
+*/
 
