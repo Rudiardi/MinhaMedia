@@ -1,4 +1,4 @@
-import react from "react";
+import React, {useContext} from "react";
 import {
   StyleSheet,
   Text,
@@ -10,25 +10,29 @@ import {LineChart} from "react-native-chart-kit"
 
 import {useFonts,Lexend_300Light} from '@expo-google-fonts/lexend';
 
+import { AuthContext } from '../../contexts/auth'
+
 export default function Graphs(){
   let [fontsLoaded] = useFonts({Lexend_300Light});
-
+ 
+  const { media } = useContext (AuthContext)
+  
+  const data = {
+    labels: ["Dom","Seg","Ter","Qua","Qui","Sex","Sab"],
+            datasets: [
+              {
+                data: media
+              }
+            ]
+  }
+  
   if (!fontsLoaded){
       return null;
   } else {
   return(  
     <View style={styles.container}>
       <LineChart
-          data={{
-            labels: ["Dom","Seg","Ter","Qua","Qui","Sex","Sab"],
-            datasets: [
-              {
-                data: [
-                  15,25,30,10,40,45
-                ]
-              }
-            ]
-          }}
+          data={data}
           width={Dimensions.get("window").width}
           height={200}
           yAxisSuffix="km/l"
