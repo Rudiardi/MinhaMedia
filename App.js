@@ -7,37 +7,40 @@ import Ionicons from  'react-native-vector-icons/Ionicons';
 
 import Home from "./src/pages/Home";
 import User from './src/pages/User';
+import AuthProvider from './src/contexts/auth';
 
 const Tab = createBottomTabNavigator();
 
 export default function App(){
   return(
     <NavigationContainer>
-      <Tab.Navigator 
-      
-        screenOptions={({route})=>({
-          tabBarIcon:({focused, color, size}) => {
-            let iconName;
-
-            if (route.name === 'Gráficos'){
-              iconName = focused
-                ? 'stats-chart'
-                : 'stats-chart-outline';
-            } else if (route.name === 'Usuário') {
-              iconName = focused 
-                ? 'person'
-                : 'person-outline';
-            }
+      <AuthProvider>
+            <Tab.Navigator 
             
-            return <Ionicons name={iconName} size={size} color={color}/>;
-        },
-        tabBarActiveTintColor: "#2BA84A",
-        tabBarInactiveTintColor: 'gray',
-        })}
-      >
-        <Tab.Screen name='Gráficos' component={Home} options={{headerShown: false}}/>
-        <Tab.Screen name='Usuário' component={User} options={{headerShown: false}}/>
-      </Tab.Navigator>
+            screenOptions={({route})=>({
+              tabBarIcon:({focused, color, size}) => {
+                let iconName;
+
+                if (route.name === 'Gráficos'){
+                  iconName = focused
+                    ? 'stats-chart'
+                    : 'stats-chart-outline';
+                } else if (route.name === 'Usuário') {
+                  iconName = focused 
+                    ? 'person'
+                    : 'person-outline';
+                }
+                
+                return <Ionicons name={iconName} size={size} color={color}/>;
+            },
+            tabBarActiveTintColor: "#2BA84A",
+            tabBarInactiveTintColor: 'gray',
+            })}
+          >
+            <Tab.Screen name='Gráficos' component={Home} options={{headerShown: false}}/>
+            <Tab.Screen name='Usuário' component={User} options={{headerShown: false}}/>
+          </Tab.Navigator>
+      </AuthProvider>
     </NavigationContainer>
   );
 }
